@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VroPay Redesign
+
+A modern website redesign for VroPay using Next.js with a focus on 3D animations and interactive elements.
+
+## Features
+
+- 🚀 **Modern UI/UX**: Clean, sleek interface with smooth interactions and responsive design
+- 🌟 **3D Animations**: Interactive 3D elements using Three.js and React Three Fiber
+- ✨ **Smooth Transitions**: Animated page transitions and microinteractions
+- 📱 **Fully Responsive**: Optimized for all device sizes
+- 🔍 **SEO Optimized**: Built with SEO best practices
+- ⚡ **Performance Focused**: Fast loading and rendering
+
+## Tech Stack
+
+- **Frontend Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **3D Graphics**: Three.js with React Three Fiber and Drei
+- **Animations**: Framer Motion, GSAP, Lottie
+- **Type Safety**: TypeScript
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/vropay-redesign.git
+cd vropay-redesign
+npm install
+```
+
+## Starting the Development Server
+
+To start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the Next.js development server on port 3002.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If that doesn't work, try one of these alternative methods:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Use the direct Next.js command
+npx next dev -p 3002
 
-## Learn More
+# Try the direct development script
+./direct-dev.sh
 
-To learn more about Next.js, take a look at the following resources:
+# Try a custom server
+npm run dev:custom
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Building for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To build the application for production:
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Starting Production Server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To start the production server:
+
+```bash
+npm run start
+```
+
+## Troubleshooting
+
+If you encounter issues with port binding, try these steps:
+
+1. Check if the port is already in use:
+```bash
+lsof -i :3002
+```
+
+2. Kill any processes using the port:
+```bash
+kill -9 $(lsof -ti:3002)
+```
+
+3. Try using a different port:
+```bash
+PORT=3003 npm run dev
+```
+
+4. Check for any firewall or networking issues that might be blocking the port.
+
+## Project Structure
+
+```
+vropay-redesign/
+├── public/              # Static assets
+├── src/
+│   ├── app/             # App router pages
+│   ├── components/      # UI components
+│   │   ├── 3d/          # 3D components using Three.js
+│   │   ├── animations/  # Animation components and utilities
+│   │   ├── layout/      # Layout components (Header, Footer, etc.)
+│   │   └── ui/          # Reusable UI components
+│   ├── constants/       # Constants and configuration
+│   └── utils/           # Utility functions
+├── tailwind.config.js   # Tailwind CSS configuration
+└── next.config.js       # Next.js configuration
+```
+
+## Key Components
+
+- **HeroScene**: 3D animated scene for the homepage hero section
+- **ScrollAnimations**: Utilities for scroll-triggered animations
+- **MainLayout**: Core layout with header and footer
+- **Section**: Reusable section component with various styling options
+- **Button**: Customizable button component with animations
+
+## Deployment
+
+The application can be built for production using:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+## SEO
+
+The website is optimized for search engines with appropriate meta tags, semantic HTML, and structured data.
+
+## Browser Support
+
+The website is compatible with all modern browsers.
+
+## License
+
+[MIT](LICENSE)
+
+## Technologies Used
+
+- Next.js 15
+- React 18
+- Three.js
+- Framer Motion
+- Tailwind CSS
